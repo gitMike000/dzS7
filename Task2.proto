@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+// protoc -I . --cpp_out=. Task2.proto
+package Task2;
+
+message FullName {
+	string name = 1;
+	string surname = 2;
+	optional string patronymic = 3;
+}
+
+message Student {
+	FullName name = 1;
+	repeated uint32 grades = 2;
+        double avg_score = 3;
+}
+
+message StudentsGroup {
+	repeated Student students = 1;
+}
